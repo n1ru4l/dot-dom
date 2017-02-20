@@ -78,6 +78,7 @@ Creating a component on which you can pass properties.
 <table width="100%">
   <tr>
     <th>React</th>
+    <th>React (functional component)</th>
     <th>.dom</th>
   </tr>
   <tr>
@@ -89,6 +90,22 @@ class Hello extends React.Component {
       'div', null, `Hello ${this.props.toWhat}`
     );
   }
+}
+
+ReactDOM.render(
+  React.createElement(
+    Hello, {toWhat: 'World'}, null
+  ),
+  document.body
+);
+</pre>
+    </td>
+    <td valign="top">
+<pre lang="javascript">
+function Hello(props) {
+  return return React.createElement(
+    'div', null, `Hello ${props.toWhat}`
+  )
 }
 
 ReactDOM.render(
